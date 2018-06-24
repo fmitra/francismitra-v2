@@ -12,16 +12,64 @@ import i11 from 'assets/images/portfolio/singles/11.jpg';
 import i12 from 'assets/images/portfolio/singles/12.jpg';
 
 export default [
-  i01,
-  i02,
-  i03,
-  i04,
-  i05,
-  i06,
-  i07,
-  i08,
-  i09,
-  i10,
-  i11,
-  i12
+  {
+    title: 'Catherine',
+    year: '2013',
+    image: i01
+  },
+  {
+    title: 'Hanger',
+    year: '2013',
+    image: i02
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i03
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i04
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i05
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i06
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i07
+  },
+  {
+    title: 'Untitled',
+    year: '2013',
+    image: i08
+  },
+  {
+    title: 'Red',
+    year: '2012',
+    image: i09
+  },
+  {
+    title: 'Fall',
+    year: '2011',
+    image: i10
+  },
+  {
+    title: 'Untitled',
+    year: '2010',
+    image: i11
+  },
+  {
+    title: 'Untitled',
+    year: '2014',
+    image: i12
+  }
 ];

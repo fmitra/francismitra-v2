@@ -3,7 +3,19 @@ import i02 from 'assets/images/portfolio/places/02.jpg';
 import i03 from 'assets/images/portfolio/places/03.jpg';
 
 export default [
-  i01,
-  i02,
-  i03
+  {
+    title: 'Haiti',
+    year: '2013',
+    image: i01
+  },
+  {
+    title: 'Haiti',
+    year: '2013',
+    image: i02
+  },
+  {
+    title: 'Haiti',
+    year: '2013',
+    image: i03
+  }
 ];
