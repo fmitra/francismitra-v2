@@ -31,10 +31,21 @@ const getImages = (pathname) => {
 };
 
 const Portfolio = (props) => {
-  const images = getImages(props.location.pathname);
+  const images = getImages(props.location.pathname).map(image => (
+    <div>
+      <img className="unveil" src={image.image} data-src={image.image} />
+      <div className="row">
+        <span>{image.title}</span>
+        <span> | </span>
+        <span>{image.year}</span>
+      </div>
+    </div>
+  ));
 
   return (
-    <span>Portfolio</span>
+    <section className="portfolio">
+      {images}
+    </section>
   );
 };
 

@@ -84,6 +84,14 @@ a.author {
 =================================================
 NAVIGATION, HEADER, FOOTER
 ================================================*/
+nav.full-screen {
+  @media (max-width: $medium-screen) {
+    width: 1000px;
+    height: 100%;
+    right: 0;
+  }
+}
+
 nav {
 	z-index: 1;
 	position: fixed;
@@ -92,14 +100,6 @@ nav {
 	max-width: $max-width;
 	height: $portfolio-height;
   @include portfolio-responses;
-
-  .full-screen {
-    @media (max-width: $medium-screen) {
-      width: 1000px;
-      height: 100%;
-      right: 0;
-    }
-  }
 
 	@media (max-width: $max-screen) {
     max-width: 1000px;
@@ -181,7 +181,7 @@ nav {
 	}
 }
 
-.footer {
+footer {
   position: fixed;
   z-index: 5;
   bottom: 0;

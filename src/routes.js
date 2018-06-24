@@ -1,4 +1,5 @@
 export default {
+  HOME: '/',
   SINGLES: '/singles',
   LIFESTYLE: '/lifestyle',
   PEOPLE: '/people',
