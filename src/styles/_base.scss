@@ -1,0 +1,158 @@
+/*
+=================================================
+DEFAULTS, MIXINS, VARIABLES
+================================================*/
+$white: #fff;
+$black: #000;
+$gray: #373737;
+$light-gray: lighten($gray, 30%);
+$red: #ca2953;
+
+$xlarge-font: 25px;
+$large-font: 21px;
+$medium-font: 14px;
+$small-font: 11px;
+
+$font-base: $medium-font helvetica, arial, sans-serif;
+
+// Positioning
+$max-width: 1200px;
+$portfolio-height: 600px;
+$portfolio-height-sz1: 400px;
+$portfolio-height-sz2: 470px;
+$portfolio-height-sz3: 550px;
+$top-position: 70px;
+
+$max-screen: $max-width;
+$large-screen: 900px;
+$medium-screen: 768px;
+$small-screen: 450px;
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin portfolio-responses() {
+  @media (max-height: 750px) {
+    height: $portfolio-height_sz3;
+  }
+
+  @media(max-height: 700px) {
+    height: $portfolio-height_sz2;
+  }
+
+  @media(max-height: 600px) {
+    height: $portfolio-height-sz1;
+  }
+}
+
+@mixin transition() {
+  transition: all 0.68s ease;
+}
+
+@mixin padding() {
+	padding: 0 10px;
+}
+
+@mixin borders() {
+  margin-bottom: 40px;
+  padding: 5px 0;
+  border-top: 1px solid darken($white, 10%);
+  border-bottom: 1px solid darken($white, 10%);
+}
+
+
+/*
+=================================================
+RESETS
+================================================*/
+body {
+  font: $font-base;
+  background-color: $white;
+  color: $black;
+  font-weight: 100;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+  left: 0;
+
+  @media (max-width: $medium-screen) {
+    font-size: $medium-font;
+    @include transition;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+a, a:visited, a:active {
+  color: $light-gray;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $gray;
+  text-decoration: none;
+}
+
+::selection {
+  background: $red;
+  color: $white;
+}
+
+::-moz-selection {
+  background: $red;
+  color: $white;
+}
+
+/*
+=================================================
+BLOCK ELEMENTS
+================================================*/
+.wrapper {
+  width: 100%;
+  margin: $top-position auto 0 auto;
+  max-width: $max-width;
+  @include clearfix;
+
+  @media (max-width: $max-width) {
+    max-width: 1000px;
+  }
+
+  @media (max-width: $medium-screen) {
+    margin: 0 auto;
+    max-width: 768px;
+    img {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.outercontainer {
+  display: table;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.innercontainer {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.row {
+  width: 100%;
+  display: block;
+  position: relative;
+  @include clearfix;
+}

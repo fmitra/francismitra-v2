@@ -1,0 +1,202 @@
+/*
+=================================================
+TOGGLED CLASSES AND MOBILE MENU
+================================================*/
+.animate-nav {
+	right: 0px !important;
+}
+
+.animate-body {
+	left: -270px !important;
+}
+
+.mobile-shade {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	background-color: fadeout($light-gray, 20%);
+}
+
+.turn-white {
+	background-color: fadeout($white, 70%)!important;
+	border-bottom: 0 !important;
+}
+
+.mobile-menu {
+	display: none;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 20;
+	@include transition;
+	left: 0;
+	height: 60px;
+	line-height: 60px;
+	background-color: $black;
+	border-bottom: 1px solid lighten($black, 20%);
+	@include padding
+	svg {
+		vertical-align: middle;
+	}
+	@media (max-width: $medium-screen) {
+		display: block;
+	}
+}
+
+a.author {
+	float: left;
+	text-transform: uppercase;
+	color: $white;
+	font-size: 18px;
+	margin-top: 2px;
+	strong {
+		font-weight: bold;
+	}
+}
+
+.menu-toggle {
+	float: right;
+	cursor: pointer;
+}
+
+// Animate the the body when fixed menu expands
+.nav-push {
+	width: 100%;
+	height: 60px;
+	background-color: $black;
+	display: none;
+	@media (max-width: $medium-screen) {
+		display: block;
+	}
+}
+
+.hide-toggle {
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+
+/*
+=================================================
+NAVIGATION, HEADER, FOOTER
+================================================*/
+nav {
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	font-family: helvetica, arial, sans-serif;
+	max-width: $max-width;
+	height: $portfolio-height;
+  @include portfolio-responses;
+
+  .full-screen {
+    @media (max-width: $medium-screen) {
+      width: 1000px;
+      height: 100%;
+      right: 0;
+    }
+  }
+
+	@media (max-width: $max-screen) {
+    max-width: 1000px;
+	}
+
+	@media (max-width: $medium-screen) {
+    z-index: 4;
+    top: 0;
+    overflow: hidden;
+    right: -270px;
+    height: 100%;
+    width: 270px;
+    background-color: $black;
+    @include transition;
+	}
+	> ul.aside, ul.menu {
+    list-style: none;
+    height: 100%;
+    width: 170px;
+    float: right;
+    font-size: $xlarge-font;
+    padding: 0 7px;
+    @include portfolio-responses;
+    li {
+      margin: 0 0 3px 0;
+      color: lighten($gray, 50%);
+      padding: 0;
+      &:first-child {
+        margin-top: 5px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @media (max-width: $medium-screen) {
+        a, a:visited, a:active {
+          color: $white;
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+        padding: 5px 20px;
+        margin: 0;
+        &:hover {
+          background-color: fadeout($black, 95%);
+        }
+      }
+    }
+	}
+	> ul.aside {
+    margin: 0;
+    text-align: right;
+    text-transform: lowercase;
+    @media (max-width: $medium-screen) {
+      display: none;
+    }
+	}
+	> ul.menu {
+    background-color: fadeout($white, 30%);
+    margin: 0;
+    text-transform: uppercase;
+    @media (max-width:1200px) {
+      margin-right: 20px;
+    }
+    @media (max-width: $medium-screen) {
+      float: none;
+      background-color: transparent;
+      text-align: right;
+      width: 100%;
+      margin: 0;
+      padding: 10px 2px;
+      font-size: 28px;
+      @media (max-height: 460px) {
+        font-size: 25px;
+      }
+      @media (max-height: 372px) {
+        font-size: 20px;
+      }
+    }
+	}
+}
+
+.footer {
+  position: fixed;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $white;
+  color: darken($white, 60%);
+  border-top: 1px solid darken($white, 10%);
+  a {
+    color: darken($white, 60%);
+  }
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}

@@ -1,0 +1,45 @@
+/*
+=================================================
+BLOG & TUTORIALS
+================================================*/
+img.blog_images {
+  margin-bottom: 10px;
+}
+
+.blog {
+  padding-bottom: 100px;
+  @media (max-width: $medium-screen) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+#blog-view {
+  > .row {
+    color: $light-gray;
+    @include borders;
+  }
+}
+
+.single {
+  padding-bottom: 100px;
+  @media (max-width: $medium-screen) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+  }
+}
+
+.single__content {
+  background-color: lighten($light-gray, 45%);
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.blog__content {
+  @extend .single__content;
+  margin-bottom: 15px;
+  line-height: 21px;
+  a, a:link {
+    font-weight: bold;
+  }
+}

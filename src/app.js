@@ -9,6 +9,9 @@ import Blog from 'components/blog/Blog';
 import Portfolio from 'components/portfolio/Portfolio';
 import Info from 'components/info/Info';
 
+// Styles
+import 'styles/app.scss';
+
 const App = () => (
   <BrowserRouter>
     <Switch>
