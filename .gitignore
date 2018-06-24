@@ -1,0 +1,9 @@
+/node_modules
+/.npm-debug.log
+/dist
+/coverage
+/webpack-assets.json
+/config/config.js
+*.swp
+.idea
+yarn-error.log
