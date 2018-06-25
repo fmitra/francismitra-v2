@@ -32,11 +32,15 @@ PORTFOLIO
   left: 0;
   padding-right: 300px;
   height: $portfolio-height;
+  div {
+    height: $portfolio-height;
+    display: inline-block;
+  }
   img {
     height: 100%;
     margin-right: 15px;
   }
-  > .row {
+  .row {
     display: none;
     @media (max-width: $medium-screen) {
       display: block;

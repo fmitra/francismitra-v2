@@ -1,5 +1,6 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 
+import HorizontalScroller from 'components/interfaces/HorizontalScroller';
 import Singles from './Singles';
 import Places from './Places';
 import Lifestyle from './Lifestyle';
@@ -44,7 +45,9 @@ const Portfolio = (props) => {
 
   return (
     <section className="portfolio">
-      {images}
+      <HorizontalScroller>
+        {images}
+      </HorizontalScroller>
     </section>
   );
 };
