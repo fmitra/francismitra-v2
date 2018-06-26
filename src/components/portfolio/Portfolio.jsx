@@ -31,16 +31,20 @@ const getImages = (pathname) => {
   }
 };
 
+const PortfolioImage = (props) => (
+  <div className="portfolio__image-wrapper">
+    <img className="portfolio__image" src={props.image.image} />
+    <div className="portfolio__caption">
+      <span>{props.image.title}</span>
+      <span> | </span>
+      <span>{props.image.year}</span>
+    </div>
+  </div>
+);
+
 const Portfolio = (props) => {
   const images = getImages(props.location.pathname).map(image => (
-    <div className="portfolio__image-wrapper">
-      <img className="portfolio__image" src={image.image} />
-      <div className="portfolio__caption">
-        <span>{image.title}</span>
-        <span> | </span>
-        <span>{image.year}</span>
-      </div>
-    </div>
+    <PortfolioImage image={image} />
   ));
 
   return (

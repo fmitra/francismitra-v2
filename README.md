@@ -7,7 +7,6 @@ Source code for [francismitra.com](http://francismitra.com)
 * Node v8.11.3
 * Yarn v1.3.2
 
-
 ## Development
 
 Webpack dev server will on port `4000`
