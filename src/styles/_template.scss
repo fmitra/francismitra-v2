@@ -11,14 +11,17 @@ ANIMATORS
 }
 
 .mobile-shade {
-  display: none;
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 3;
-  background-color: rgba(0, 0, 0, .2);
+  background-color: rgba(128, 128, 128, .9);
+  display: none;
+  @media (max-width: $medium-screen) {
+    display: block;
+  }
 }
 
 // Animate the the body when fixed menu expands
@@ -68,6 +71,11 @@ a.header__author {
   cursor: pointer;
   height: 35px;
   margin-top: 12px;
+}
+
+.header--white {
+  background-color: rgba(128, 128, 128, .9);
+  border-bottom: 0;
 }
 
 .header--hide {

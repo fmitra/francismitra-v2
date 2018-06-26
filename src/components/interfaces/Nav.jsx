@@ -1,20 +1,23 @@
-import { h } from 'preact';
+import { h, Component } from 'preact';
 import { Link } from 'react-router-dom';
 
 import ROUTES from 'src/routes';
 
 const Nav = (props) => {
-  const styleName = props.isHome ? 'nav nav--full-screen' : 'nav';
+  const navStyle = props.isHome ? 'nav nav--full-screen' : 'nav';
+  const navAnimation = props.isMobileMenuVisible ? 'animate-nav' : '';
+  const styleName = `${navStyle} ${navAnimation}`;
+  const toggleHandler = props.onMenuToggle;
 
   return (
     <nav className={styleName}>
       <ul className="nav__menu">
-        <li><Link to={ROUTES.SINGLES}>Singles</Link></li>
-        <li><Link to={ROUTES.LIFESTYLE}>Life</Link></li>
-        <li><Link to={ROUTES.PEOPLE}>People</Link></li>
-        <li><Link to={ROUTES.PLACES}>Places</Link></li>
-        <li><Link to={ROUTES.INFO}>Info</Link></li>
-        <li><Link to={ROUTES.BLOG}>Blog</Link></li>
+        <li><Link to={ROUTES.SINGLES} onClick={toggleHandler}>Singles</Link></li>
+        <li><Link to={ROUTES.LIFESTYLE} onClick={toggleHandler}>Life</Link></li>
+        <li><Link to={ROUTES.PEOPLE} onClick={toggleHandler}>People</Link></li>
+        <li><Link to={ROUTES.PLACES} onClick={toggleHandler}>Places</Link></li>
+        <li><Link to={ROUTES.INFO} onClick={toggleHandler}>Info</Link></li>
+        <li><Link to={ROUTES.BLOG} onClick={toggleHandler}>Blog</Link></li>
       </ul>
       { props.isHome &&
         <ul className="nav__aside">
@@ -26,6 +29,6 @@ const Nav = (props) => {
       }
     </nav>
   );
-};
+}
 
 export default Nav;

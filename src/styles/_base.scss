@@ -92,14 +92,7 @@ body {
   color: $black;
   font-weight: 100;
   margin: 0 auto;
-  position: relative;
   overflow-x: hidden;
-  left: 0;
-
-  @media (max-width: $medium-screen) {
-    font-size: $medium-font;
-    @include transition;
-  }
 }
 
 *, *:before, *:after {
@@ -135,6 +128,7 @@ BLOCK ELEMENTS
   width: 100%;
   margin: $top-position auto 0 auto;
   max-width: $max-width;
+  position: relative;
   @include clearfix;
 
   @media (max-width: $max-width) {
@@ -144,6 +138,10 @@ BLOCK ELEMENTS
   @media (max-width: $medium-screen) {
     margin: 0 auto;
     max-width: 768px;
+
+    // Set for animation
+    @include transition;
+    left: 0;
   }
 }
 
