@@ -33,9 +33,9 @@ const getImages = (pathname) => {
 
 const Portfolio = (props) => {
   const images = getImages(props.location.pathname).map(image => (
-    <div>
-      <img className="unveil" src={image.image} data-src={image.image} />
-      <div className="row">
+    <div className="portfolio__image-wrapper">
+      <img className="portfolio__image" src={image.image} />
+      <div className="portfolio__caption">
         <span>{image.title}</span>
         <span> | </span>
         <span>{image.year}</span>
@@ -44,11 +44,11 @@ const Portfolio = (props) => {
   ));
 
   return (
-    <section className="portfolio">
-      <HorizontalScroller>
+    <div className="portfolio">
+      <HorizontalScroller customStyle="portfolio__image-wrapper">
         {images}
       </HorizontalScroller>
-    </section>
+    </div>
   );
 };
 

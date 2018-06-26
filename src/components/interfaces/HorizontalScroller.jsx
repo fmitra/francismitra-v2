@@ -33,8 +33,10 @@ class HorizontalScroller extends Component {
   }
 
   render() {
+    const { customStyle } = this.props;
+
     return (
-      <div>
+      <div className={customStyle}>
         {this.props.children}
       </div>
     );

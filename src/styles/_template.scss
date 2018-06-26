@@ -1,80 +1,76 @@
 /*
 =================================================
-TOGGLED CLASSES AND MOBILE MENU
+ANIMATORS
 ================================================*/
 .animate-nav {
-	right: 0px !important;
+  right: 0px !important;
 }
 
 .animate-body {
-	left: -270px !important;
+  left: -270px !important;
 }
 
 .mobile-shade {
-	display: none;
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	z-index: 3;
-	background-color: fadeout($light-gray, 20%);
-}
-
-.turn-white {
-	background-color: fadeout($white, 70%)!important;
-	border-bottom: 0 !important;
-}
-
-.mobile-menu {
-	display: none;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 20;
-	@include transition;
-	left: 0;
-	height: 60px;
-	line-height: 60px;
-	background-color: $black;
-	border-bottom: 1px solid lighten($black, 20%);
-	@include padding
-	svg {
-		vertical-align: middle;
-	}
-	@media (max-width: $medium-screen) {
-		display: block;
-	}
-}
-
-a.author {
-	float: left;
-	text-transform: uppercase;
-	color: $white;
-	font-size: 18px;
-	margin-top: 2px;
-	strong {
-		font-weight: bold;
-	}
-}
-
-.menu-toggle {
-	float: right;
-	cursor: pointer;
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, .2);
 }
 
 // Animate the the body when fixed menu expands
-.nav-push {
-	width: 100%;
-	height: 60px;
-	background-color: $black;
-	display: none;
-	@media (max-width: $medium-screen) {
-		display: block;
-	}
+.body-animator {
+  width: 100%;
+  height: 60px;
+  background-color: $black;
+  display: none;
+  @media (max-width: $medium-screen) {
+    display: block;
+  }
 }
 
-.hide-toggle {
+/*
+=================================================
+HEADER
+================================================*/
+.header {
+  display: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 20;
+  @include transition;
+  left: 0;
+  height: 60px;
+  line-height: 60px;
+  background-color: $black;
+  border-bottom: 1px solid lighten($black, 20%);
+  @include padding
+  @media (max-width: $medium-screen) {
+    display: block;
+  }
+}
+
+a.header__author {
+  float: left;
+  text-transform: uppercase;
+  font-family: $font-theme;
+  color: $white;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.header__menu-toggle {
+  float: right;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.header--hide {
   @media (max-width: $medium-screen) {
     display: none;
   }
@@ -82,30 +78,22 @@ a.author {
 
 /*
 =================================================
-NAVIGATION, HEADER, FOOTER
+NAVIGATION
 ================================================*/
-nav.full-screen {
-  @media (max-width: $medium-screen) {
-    width: 1000px;
-    height: 100%;
-    right: 0;
-  }
-}
-
-nav {
-	z-index: 1;
-	position: fixed;
-	width: 100%;
-	font-family: helvetica, arial, sans-serif;
-	max-width: $max-width;
-	height: $portfolio-height;
+.nav {
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  font-family: $font-theme;
+  max-width: $max-width;
+  height: $portfolio-height;
   @include portfolio-responses;
 
-	@media (max-width: $max-screen) {
+  @media (max-width: $max-screen) {
     max-width: 1000px;
-	}
+  }
 
-	@media (max-width: $medium-screen) {
+  @media (max-width: $medium-screen) {
     z-index: 4;
     top: 0;
     overflow: hidden;
@@ -114,74 +102,90 @@ nav {
     width: 270px;
     background-color: $black;
     @include transition;
-	}
-	> ul.aside, ul.menu {
-    list-style: none;
-    height: 100%;
-    width: 170px;
-    float: right;
-    font-size: $xlarge-font;
-    padding: 0 7px;
-    @include portfolio-responses;
-    li {
-      margin: 0 0 3px 0;
-      color: lighten($gray, 50%);
-      padding: 0;
-      &:first-child {
-        margin-top: 5px;
-      }
-      &:last-child {
-        margin-bottom: 0;
-      }
-      @media (max-width: $medium-screen) {
-        a, a:visited, a:active {
-          color: $white;
-          width: 100%;
-          height: 100%;
-          display: block;
-        }
-        padding: 5px 20px;
-        margin: 0;
-        &:hover {
-          background-color: fadeout($black, 95%);
-        }
-      }
-    }
-	}
-	> ul.aside {
-    margin: 0;
-    text-align: right;
-    text-transform: lowercase;
-    @media (max-width: $medium-screen) {
-      display: none;
-    }
-	}
-	> ul.menu {
-    background-color: fadeout($white, 30%);
-    margin: 0;
-    text-transform: uppercase;
-    @media (max-width:1200px) {
-      margin-right: 20px;
-    }
-    @media (max-width: $medium-screen) {
-      float: none;
-      background-color: transparent;
-      text-align: right;
-      width: 100%;
-      margin: 0;
-      padding: 10px 2px;
-      font-size: 28px;
-      @media (max-height: 460px) {
-        font-size: 25px;
-      }
-      @media (max-height: 372px) {
-        font-size: 20px;
-      }
-    }
-	}
+  }
 }
 
-footer {
+.nav--full-screen {
+  @media (max-width: $medium-screen) {
+    width: 1000px;
+    height: 100%;
+    right: 0;
+  }
+}
+
+.nav__ul {
+  list-style: none;
+  height: 100%;
+  width: 170px;
+  float: right;
+  font-size: $xlarge-font;
+  padding: 0 7px;
+  @include portfolio-responses;
+  li {
+    margin: 0 0 3px 0;
+    color: lighten($gray, 50%);
+    padding: 0;
+    &:first-child {
+      margin-top: 5px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media (max-width: $medium-screen) {
+      a, a:visited, a:active {
+        color: $white;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      padding: 5px 20px;
+      margin: 0;
+    }
+  }
+}
+
+.nav__menu {
+  @extend .nav__ul;
+  background-color: rgba(255, 255, 255, .6);
+  margin: 0;
+  text-transform: uppercase;
+
+  @media (max-width:1200px) {
+    margin-right: 20px;
+  }
+
+  @media (max-width: $medium-screen) {
+    float: none;
+    background-color: transparent;
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding: 10px 2px;
+    font-size: 28px;
+    @media (max-height: 460px) {
+      font-size: 25px;
+    }
+    @media (max-height: 372px) {
+      font-size: 20px;
+    }
+  }
+}
+
+.nav__aside {
+  @extend .nav__ul;
+  margin: 0;
+  text-align: right;
+  text-transform: lowercase;
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+
+/*
+=================================================
+FOOTER
+================================================*/
+.footer {
   position: fixed;
   z-index: 5;
   bottom: 0;
@@ -190,13 +194,60 @@ footer {
   padding: 0 20px;
   height: 40px;
   line-height: 40px;
+  font-family: $font-theme;
   background-color: $white;
   color: darken($white, 60%);
   border-top: 1px solid darken($white, 10%);
-  a {
-    color: darken($white, 60%);
-  }
   @media (max-width: $medium-screen) {
     display: none;
+  }
+}
+
+.footer__author {
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+
+.footer__spacer {
+  display: inline-block;
+  padding: 0 5px;
+  @media (max-width: $medium-screen) {
+    display: none;
+  }
+}
+
+.footer__left {
+  float: left;
+}
+
+.footer__right {
+  float: right;
+}
+
+/*
+=================================================
+BODY
+================================================*/
+.page {
+  font-family: $font-standard;
+  width: 85%;
+  padding: 10px 20px;
+  z-index: 2;
+  position: relative;
+  @include clearfix;
+  @media (max-width: $max-width) {
+    margin-left: 20px;
+    width: 78%;
+  }
+  @media (max-width: 900px) {
+    width: 75%;
+  }
+  @media (max-width: $medium-screen) {
+    width: 100%;
+    margin-left: 0;
+    @include padding;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 }

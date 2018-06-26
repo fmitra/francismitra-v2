@@ -2,10 +2,6 @@
 =================================================
 BLOG & TUTORIALS
 ================================================*/
-img.blog_images {
-  margin-bottom: 10px;
-}
-
 .blog {
   padding-bottom: 100px;
   @media (max-width: $medium-screen) {
@@ -14,32 +10,21 @@ img.blog_images {
   }
 }
 
-#blog-view {
-  > .row {
-    color: $light-gray;
-    @include borders;
-  }
+.blog__image {
+  margin-bottom: 10px;
+  max-width: 100%;
+  width: 100%;
 }
 
-.single {
-  padding-bottom: 100px;
-  @media (max-width: $medium-screen) {
-      padding-top: 20px;
-      padding-bottom: 20px;
-  }
+.blog__meta {
+  @extend .row;
+  color: $light-gray;
+  @include borders;
+  letter-spacing: 1.5px;
+  font-size: 12px;
 }
 
-.single__content {
-  background-color: lighten($light-gray, 45%);
-  padding: 10px;
-  margin-bottom: 40px;
-}
-
-.blog__content {
-  @extend .single__content;
-  margin-bottom: 15px;
-  line-height: 21px;
-  a, a:link {
-    font-weight: bold;
-  }
+.meta__spacer {
+  display: inline-block;
+  padding: 0 5px;
 }

@@ -2,51 +2,12 @@
 =================================================
 PORTFOLIO
 ================================================*/
-.page {
-  width: 85%;
-  padding: 10px 20px;
-  z-index: 2;
-  position: relative;
-  @include clearfix;
-  img {
-      width: 100%;
-      max-width: 100%;
-  }
-  @media (max-width: $max-width) {
-    margin-left: 20px;
-    width: 78%;
-  }
-  @media (max-width: 900px) {
-    width: 75%;
-  }
-  @media (max-width: $medium-screen) {
-    width: 100%;
-    margin-left: 0;
-    @include padding;
-  }
-}
-
 .portfolio {
   white-space: nowrap;
   position: absolute;
   left: 0;
   padding-right: 300px;
   height: $portfolio-height;
-  div {
-    height: $portfolio-height;
-    display: inline-block;
-  }
-  img {
-    height: 100%;
-    margin-right: 15px;
-  }
-  .row {
-    display: none;
-    @media (max-width: $medium-screen) {
-      display: block;
-      @include borders;
-    }
-  }
   @media (max-width: $medium-screen) {
     top: 20px;
     position: relative;
@@ -54,9 +15,33 @@ PORTFOLIO
     height: auto !important;
     white-space: normal;
     width: 100%;
-    img {
-      margin-right: 0;
-    }
   }
   @include portfolio-responses;
+}
+
+.portfolio__image-wrapper {
+  height: 100%;
+  display: inline-block;
+}
+
+.portfolio__caption {
+  @extend .row;
+  display: none;
+  font-family: $font-theme;
+  @media (max-width: $medium-screen) {
+    @include borders;
+    padding: 5px 0 3px 0;
+    font-size: 12px;
+    display: block
+  }
+}
+
+.portfolio__image {
+  height: 100%;
+  margin-right: 15px;
+  @media (max-width: $medium-screen) {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }

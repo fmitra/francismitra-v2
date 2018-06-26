@@ -11,10 +11,10 @@ const Grid = (props) => {
     <div className="wrapper">
       <Header isHome={isHome} />
       <Nav isHome={isHome} />
-      <div className="nav-push"></div>
+      <div className="body-animator"></div>
       <div className="mobile-shade"></div>
-      <Footer />
       {props.children}
+      <Footer />
     </div>
   );
 };

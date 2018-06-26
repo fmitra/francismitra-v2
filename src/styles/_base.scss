@@ -1,5 +1,17 @@
 /*
 =================================================
+CUSTOM FONTS
+================================================*/
+@font-face {
+  font-family: 'letter_gothic_medium';
+  src: url('/static/fonts/letter-gothic-medium.eot?') format('eot');
+  src: local('letter gothic std'),
+       url('/static/fonts/letter-gothic-medium.otf'),
+       url('/static/fonts/letter-gothic-medium.ttf') format('truetype');
+}
+
+/*
+=================================================
 DEFAULTS, MIXINS, VARIABLES
 ================================================*/
 $white: #fff;
@@ -13,7 +25,8 @@ $large-font: 21px;
 $medium-font: 14px;
 $small-font: 11px;
 
-$font-base: $medium-font helvetica, arial, sans-serif;
+$font-standard: helvetica, arial, sans-serif;
+$font-theme: letter_gothic_medium, arial, sans-serif;
 
 // Positioning
 $max-width: 1200px;
@@ -58,7 +71,7 @@ $small-screen: 450px;
 }
 
 @mixin padding() {
-	padding: 0 10px;
+  padding: 0 10px;
 }
 
 @mixin borders() {
@@ -68,20 +81,13 @@ $small-screen: 450px;
   border-bottom: 1px solid darken($white, 10%);
 }
 
-.right {
-  float: right;
-}
-
-.left {
-  float: left;
-}
-
 /*
 =================================================
 RESETS
 ================================================*/
 body {
-  font: $font-base;
+  font-face: $font-standard;
+  font-size: $medium-font;
   background-color: $white;
   color: $black;
   font-weight: 100;
@@ -138,23 +144,7 @@ BLOCK ELEMENTS
   @media (max-width: $medium-screen) {
     margin: 0 auto;
     max-width: 768px;
-    img {
-      max-width: 100%;
-      width: 100%;
-    }
   }
-}
-
-.outercontainer {
-  display: table;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-
-.innercontainer {
-  display: table-cell;
-  vertical-align: middle;
 }
 
 .row {

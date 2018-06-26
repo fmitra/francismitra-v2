@@ -3,18 +3,21 @@ import { Link } from 'react-router-dom';
 
 import ROUTES from 'src/routes';
 
-const YEAR = new Date().getFullYear();
+const Footer = (props) => {
+  const currentYear = new Date().getFullYear();
 
-const Footer = (props) => (
-  <footer>
-    <span className="left">
-      <Link to={ROUTES.HOME}>Francis Mitra</Link> |
-      <a target="_blank" href="https://github.com/fmitra/francismitra">Source</a>
-    </span>
-    <span className="right">
-      &copy; {YEAR}
-    </span>
-  </footer>
-);
+  return (
+    <div className="footer clearfix">
+      <span className="footer__left">
+        <Link className="footer__author" to={ROUTES.HOME}>Francis Mitra</Link>
+        <span className="footer__spacer">|</span>
+        <a target="_blank" href="https://github.com/fmitra/francismitra">Source</a>
+      </span>
+      <span className="footer__right">
+        &copy; {currentYear}
+      </span>
+    </div>
+  );
+};
 
 export default Footer;

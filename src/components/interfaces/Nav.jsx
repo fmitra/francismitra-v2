@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import ROUTES from 'src/routes';
 
 const Nav = (props) => {
-  const styleName = props.isHome ? 'full-screen' : '';
+  const styleName = props.isHome ? 'nav nav--full-screen' : 'nav';
 
   return (
     <nav className={styleName}>
-      <ul className="menu">
+      <ul className="nav__menu">
         <li><Link to={ROUTES.SINGLES}>Singles</Link></li>
         <li><Link to={ROUTES.LIFESTYLE}>Life</Link></li>
         <li><Link to={ROUTES.PEOPLE}>People</Link></li>
@@ -16,12 +16,14 @@ const Nav = (props) => {
         <li><Link to={ROUTES.INFO}>Info</Link></li>
         <li><Link to={ROUTES.BLOG}>Blog</Link></li>
       </ul>
-      <ul className="aside">
-        <li>abstract&</li>
-        <li>love&</li>
-        <li>fashion&</li>
-        <li>travel&</li>
-      </ul>
+      { props.isHome &&
+        <ul className="nav__aside">
+          <li>abstract&</li>
+          <li>love&</li>
+          <li>fashion&</li>
+          <li>travel&</li>
+        </ul>
+      }
     </nav>
   );
 };
