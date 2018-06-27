@@ -25,7 +25,6 @@ class HorizontalScroller extends Component {
   }
 
   componentDidMount() {
-    // TODO Check browser compatibilty for passive setting
     window.addEventListener('wheel', this.handleScroll, { passive: true });
   }
 

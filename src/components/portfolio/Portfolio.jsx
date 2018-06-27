@@ -1,4 +1,4 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
 
 import HorizontalScroller from 'components/interfaces/HorizontalScroller';
 import Singles from './Singles';

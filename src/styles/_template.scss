@@ -3,11 +3,15 @@
 ANIMATORS
 ================================================*/
 .animate-nav {
-  right: 0px !important;
+  @media (max-width: $medium-screen) {
+    right: 0px !important;
+  }
 }
 
 .animate-body {
-  left: -270px !important;
+  @media (max-width: $medium-screen) {
+    left: -270px !important;
+  }
 }
 
 .mobile-shade {
