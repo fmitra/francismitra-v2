@@ -1,5 +1,7 @@
 import { h, Component } from 'preact';
 
+import Loader from 'components/interfaces/Loader';
+
 class ScrollPagination extends Component {
   constructor(props) {
     super(props);
@@ -44,12 +46,23 @@ class ScrollPagination extends Component {
     const newItems = items.slice(newStartPoint, newOffsetPoint);
     const allVisibleItems = visibleItems.concat(newItems);
 
-    this.setState({
-      start: newStartPoint,
-      offset: newOffsetPoint,
-      visibleItems: allVisibleItems,
-      isPaginating: false,
-    })
+    const setState = () => {
+      this.setState({
+        start: newStartPoint,
+        offset: newOffsetPoint,
+        visibleItems: allVisibleItems,
+        isPaginating: false,
+      })
+    };
+
+    // Rendering will most likely occur instantly
+    // causing jagged animations. We want to give the
+    // impression that items are loaded despite
+    // being a static site, so we delay rendering
+    // by one second.
+    const TTLForRender = 1000;
+
+    setTimeout(setState, TTLForRender);
   }
 
   getScrollXY() {
@@ -97,7 +110,9 @@ class ScrollPagination extends Component {
     );
     const threshold = this.getDocHeight() - window.innerHeight - 100;
     if ((this.getScrollXY()[1] > threshold) && canPaginate) {
-      this.state.isPaginating = true;
+      this.setState({
+        isPaginating: true
+      });
       this.handlePaginate();
     }
    }
@@ -112,6 +127,7 @@ class ScrollPagination extends Component {
     return (
       <div id="scroll-pagination" className={customStyle}>
         {visibleItems}
+        { this.state.isPaginating && <Loader /> }
       </div>
     );
   }
