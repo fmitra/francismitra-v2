@@ -3,9 +3,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const extractCSS = new ExtractTextPlugin('styles/[name]-[contenthash].css');
-const extractSASS = new ExtractTextPlugin('styles/[name]-[contenthash].css');
+const ExtractTextPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 
 const dirs = {
@@ -24,14 +22,13 @@ module.exports = {
 
     vendor: [
       'preact',
-      'react-compat',
-      'react-router-dom'
+      'preact-router',
     ]
   },
 
   output: {
     path: dirs.dist,
-    publicPath: '/',
+    publicPath: '',
     filename: '[name]-[chunkhash].js',
     sourceMapFilename: '[file].map'
   },
@@ -46,9 +43,7 @@ module.exports = {
       'src': dirs.sources,
       'styles': dirs.styles,
       'assets': dirs.assets,
-      'config': dirs.config,
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat'
+      'config': dirs.config
     }
   },
 
@@ -75,21 +70,16 @@ module.exports = {
       }
     }, {
       test: /\.scss$/,
-      loaders: extractSASS.extract([
-        {
-          loader: 'css-loader?minimize'
-        },
-        {
-          loader: 'postcss-loader'
-        },
-        {
-          loader: 'sass-loader'
-        }
-      ])
-    }, {
-      test: /\.css$/,
-      loaders: extractCSS.extract(['css-loader?minimize', 'postcss-loader'])
-    }, {
+      use: [
+        ExtractTextPlugin.loader,
+        'css-loader?minimize',
+        // TODO Update this to pass ocnfig
+        // and remove extra file
+        'postcss-loader',
+        'sass-loader'
+      ]
+    },
+    {
       test: /\.hbs$/,
       loader: 'ejs-loader'
     }, {
@@ -102,41 +92,52 @@ module.exports = {
     }]
   },
 
-  plugins: [
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
+  optimization: {
+    minimize: true
+    //    splitChunks: {
+    //      chunks: 'async',
+    //      minChunks: 1,
+    //      name: true,
+    //      cacheGroups: {
+    //        vendors: {
+    //          test: /[\\/]node_modules[\\/]/,
+    //          priority: -10
+    //        }
+    //      }
+    //    }
+  },
 
-      options: {
-        postcss: [
-          autoprefixer({
-            browsers: [
-              '> 1%',
-              'ie >= 10'
-            ]
-          })
-        ]
-      }
-    }),
+  plugins: [
+    //    new webpack.LoaderOptionsPlugin({
+    //      minimize: true,
+    //      debug: false,
+    //
+    //      options: {
+    //        postcss: [
+    //          autoprefixer({
+    //            browsers: [
+    //              '> 1%',
+    //              'ie >= 10'
+    //            ]
+    //          })
+    //        ]
+    //      }
+    //    }),
 
     new CleanWebpackPlugin(['dist']),
 
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest']
+    new ExtractTextPlugin({
+      filename: '[name]-[contenthash].css',
+      chunkFilename: '[id].css'
     }),
 
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
+    //    new webpack.DefinePlugin({
+    //      'process.env': {
+    //        NODE_ENV: JSON.stringify('production')
+    //      }
+    //    }),
 
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true
-    }),
-    extractCSS,
-    extractSASS,
-    new AssetsPlugin(),
+    //    new AssetsPlugin(),
 
     new HtmlWebpackPlugin({
       template: 'index.ejs',

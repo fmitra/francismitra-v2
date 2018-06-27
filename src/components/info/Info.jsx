@@ -1,5 +1,6 @@
 import { h } from 'preact';
 
+
 const Info = (props) => (
   <div className="page info">
     <span>My name is Francis.</span>

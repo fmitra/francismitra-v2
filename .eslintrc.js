@@ -2,11 +2,12 @@ module.exports = {
   plugins: ['react'],
   extends: ['plugin:react/recommended'],
   parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true
-    }
+    sourceType: "module",
+    ecmaVersion: "2016"
   },
   rules: {
+    'react/no-deprecated': 0,
+    'react/react-in-jsx-scope': 0,
     'no-magic-numbers': 0,
     'object-property-newline': 0,
     'no-extra-parens': 0,

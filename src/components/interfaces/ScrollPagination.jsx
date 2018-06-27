@@ -120,8 +120,8 @@ class ScrollPagination extends Component {
   render() {
     const { customStyle, wrapper } = this.props;
     const ComponentWrapper = wrapper;
-    const visibleItems = this.state.visibleItems.map(item => (
-      <ComponentWrapper item={item} />
+    const visibleItems = this.state.visibleItems.map((item, i) => (
+      <ComponentWrapper key={i} item={item} />
     ));
 
     return (

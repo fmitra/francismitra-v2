@@ -1,10 +1,14 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Router from 'preact-router';
 import { h, render, Component } from 'preact';
 
 import ROUTES from 'src/routes';
 
 // Components
-import Grid from  'components/interfaces/Grid';
+import Nav from 'components/interfaces/Nav';
+import Footer from 'components/interfaces/Footer';
+import Header from 'components/interfaces/Header';
+
+import Home from 'components/home/Home';
 import Blog from 'components/blog/Blog';
 import Portfolio from 'components/portfolio/Portfolio';
 import Info from 'components/info/Info';
@@ -12,19 +16,69 @@ import Info from 'components/info/Info';
 // Styles
 import 'styles/app.scss';
 
-const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Grid>
-        <Route exact path={ROUTES.SINGLES} component={Portfolio} />
-        <Route exact path={ROUTES.LIFESTYLE} component={Portfolio} />
-        <Route exact path={ROUTES.PEOPLE} component={Portfolio} />
-        <Route exact path={ROUTES.PLACES} component={Portfolio} />
-        <Route exact path={ROUTES.INFO} component={Info} />
-        <Route exact path={ROUTES.BLOG} component={Blog} />
-      </Grid>
-    </Switch>
-  </BrowserRouter>
-);
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isMobileMenuVisible: false,
+      path: '/'
+    };
+
+    this.handleToggleMobileMenu.bind(this);
+  }
+
+  handleToggleMobileMenu(props) {
+    const isVisible = this.state.isMobileMenuVisible;
+    const newState = {
+      isMobileMenuVisible: !isVisible
+    };
+
+    if (props) {
+      newState['path'] = props.url;
+    }
+
+    this.setState(newState);
+  }
+
+  render() {
+    const isHome = this.state.path === '/';
+    const wrapperAnimation = this.state.isMobileMenuVisible ? 'animate-body' : '';
+    const wrapperStyle = `wrapper ${wrapperAnimation}`;
+
+    return (
+      <div className={wrapperStyle}>
+        <Header
+          isMobileMenuVisible={this.state.isMobileMenuVisible}
+          isHome={isHome}
+          onMenuToggle={() => this.handleToggleMobileMenu()}
+        />
+        <Nav
+          isHome={isHome}
+          isMobileMenuVisible={this.state.isMobileMenuVisible}
+          onMenuToggle={() => this.handleToggleMobileMenu()}
+        />
+        <div className="body-animator"></div>
+
+        {
+          this.state.isMobileMenuVisible &&
+          <div className="mobile-shade" onClick={() => this.handleToggleMobileMenu()}></div>
+        }
+
+        <Router onChange={(props) => this.handleToggleMobileMenu(props)}>
+          <Home path={ROUTES.HOME} />
+          <Portfolio path={ROUTES.SINGLES} />
+          <Portfolio path={ROUTES.LIFESTYLE} />
+          <Portfolio path={ROUTES.PEOPLE} />
+          <Portfolio path={ROUTES.PLACES} />
+          <Info path={ROUTES.INFO} />
+          <Blog path={ROUTES.BLOG} />
+        </Router>
+
+        <Footer />
+      </div>
+    );
+  }
+}
 
 render(<App />, document.getElementById('app'));

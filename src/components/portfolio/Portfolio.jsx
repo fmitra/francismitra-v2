@@ -43,8 +43,8 @@ const PortfolioImage = (props) => (
 );
 
 const Portfolio = (props) => {
-  const images = getImages(props.location.pathname).map(image => (
-    <PortfolioImage image={image} />
+  const images = getImages(props.path).map((image, i) => (
+    <PortfolioImage key={i} image={image} />
   ));
 
   return (

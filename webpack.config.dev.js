@@ -35,9 +35,7 @@ module.exports = {
       'styles': dirs.styles,
       'assets': dirs.assets,
       'config': dirs.config,
-      'components': dirs.components,
-      'react': 'preact-compat',
-      'react-dom': 'preact-compat'
+      'components': dirs.components
     }
   },
 
