@@ -128,7 +128,6 @@ BLOCK ELEMENTS
   width: 100%;
   margin: $top-position auto 0 auto;
   max-width: $max-width;
-  position: relative;
   @include clearfix;
 
   @media (max-width: $max-width) {
@@ -141,6 +140,7 @@ BLOCK ELEMENTS
 
     // Set for animation
     @include transition;
+    position: relative;
     left: 0;
   }
 }
