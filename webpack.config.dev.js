@@ -5,7 +5,6 @@ const dirs = {
   dist: path.resolve(__dirname, 'dist'),
   styles: path.resolve(__dirname, 'src/styles'),
   assets: path.resolve(__dirname, 'assets'),
-  config: path.resolve(__dirname, 'config'),
   components: path.resolve(__dirname, 'src/components')
 };
 
@@ -34,7 +33,6 @@ module.exports = {
       'src': dirs.sources,
       'styles': dirs.styles,
       'assets': dirs.assets,
-      'config': dirs.config,
       'components': dirs.components
     }
   },

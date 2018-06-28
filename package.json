@@ -5,10 +5,8 @@
   "main": "app.js",
   "scripts": {
     "lint": "eslint --ext .js,.jsx src",
-    "configure:development": "cp ./config/development.js ./config/config.js",
-    "configure:production": "cp ./config/production.js ./config/config.js",
     "start": "webpack-dev-server --config ./webpack.config.dev.js --hot --history-api-fallback --progress --mode development",
-    "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --history-api-fallback --progress --bail"
+    "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --history-api-fallback --progress --bail && cp -r ./assets/blog ./dist/assets"
   },
   "author": "Francis Mitra",
   "license": "ISC",

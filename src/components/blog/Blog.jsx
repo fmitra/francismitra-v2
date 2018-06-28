@@ -1,37 +1,36 @@
 import { h, render } from 'preact';
 
 import ScrollPagination from 'components/interfaces/ScrollPagination';
-import Sample from 'assets/images/portfolio/singles/01.jpg';
+import Posts from 'assets/blog/posts.json';
 
-const generateMockPosts = () => {
-  const posts = [];
-  for (let i = 0; i < 30; i++) {
-    posts.push({
-      image: Sample,
-      timestamp: 'May 20, 2018',
-      title: 'Myanmar'
-    })
-  }
-  return posts;
-};
-
-const BlogPost = (props) => (
-  <div className="blog__post">
-    <img className="blog__image" src={props.item.image} alt=""/>
-    <div className="blog__meta">
-      <span className="meta__date">{props.item.timestamp}</span>
-      <span className="meta__spacer">|</span>
-      <span className="meta__title">{props.item.title}</span>
-    </div>
-  </div>
+const BlogImage = (props) => (
+  // TODO For now we'll leave this out of webpack. Debug this later
+  <img className="blog__image" src={props.image} alt="" />
 );
 
-const Blog = (props) => {
-  const posts = generateMockPosts();
+const BlogPost = (props) => {
+  const images = props.item.images.map((image, i) => (
+    <BlogImage key={i} image={image} />
+  ));
 
   return (
+    <div className="blog__post">
+      {images}
+      <div className="blog__content" dangerouslySetInnerHTML={{ __html: props.item.content }}>
+      </div>
+      <div className="blog__meta">
+        <span className="meta__date">{props.item.timestamp}</span>
+        <span className="meta__spacer">|</span>
+        <span className="meta__title">{props.item.title}</span>
+      </div>
+    </div>
+  );
+};
+
+const Blog = (props) => {
+  return (
     <div className="page blog">
-      <ScrollPagination perPage={5} payload={posts} wrapper={BlogPost} />
+      <ScrollPagination perPage={5} payload={Posts} wrapper={BlogPost} />
     </div>
   );
 };

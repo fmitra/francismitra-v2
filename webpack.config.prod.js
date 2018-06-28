@@ -11,7 +11,6 @@ const dirs = {
   styles: path.resolve(__dirname, 'src/styles'),
   components: path.resolve(__dirname, 'src/components'),
   assets: path.resolve(__dirname, 'assets'),
-  config: path.resolve(__dirname, 'config')
 };
 
 module.exports = {
@@ -42,7 +41,6 @@ module.exports = {
       'src': dirs.sources,
       'styles': dirs.styles,
       'assets': dirs.assets,
-      'config': dirs.config
     }
   },
 

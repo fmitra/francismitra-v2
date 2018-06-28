@@ -1,0 +1,344 @@
+[
+  {
+    "images": [
+      "/assets/blog/media/0041.jpg"
+    ],
+    "title": "Myanmar",
+    "timestamp": "2016-05-01 14:24:49",
+    "content": null,
+    "id": "39"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0039_2.jpg"
+    ],
+    "title": "Reflections on the Travel Startup Space",
+    "timestamp": "2015-06-11 19:03:50",
+    "content": "<p>There was unused space in our luggage. The question was, how are we going to use it?</p><p>It's been close to half a year since I've decided to get off the road and settle down into a routine again. I wasn't quite sure what it was exactly I wanted to pursue, but I knew I wanted it to fall into some type of creative or technical field, and in the spirit of being 23 at the time, I found myself looking at the startup communities outside of America. Which is how I ended up traveling to Singapore to co-found Envoyrs, a travel startup focused on peer-to-peer deliveries in South East Asia. </p><p>We had some good things going for us. We were just accepted by <a href=\"http://www.jfdi.asia/\" target=\"_blank\">JFDI</a>, the Singaporean accelerator program and our primary investor. We even picked up a small angel investor along the way from Indonesia. And if Facebook could tell us anything, it was that people were excited. </p><p>We spent 3 months prototyping the Envoyrs concept by manually matching travelers and expats while building out our web application in the background (a sort of AirBnB and eBay mishmash built on Django and AngularJS). The manual matching process for our MVP was tedious, but people were coping with it nonetheless, from Singaporeans looking for cheaper access to alcohol to a school teacher in Cambodia looking to populate his library. But as we grew closer and closer to launch day, and spent more time talking to the mentor and investor community that JFDI opened up to us, we grew doubtful and eventually made one of the harder and to my relief, a surprisingly common decision many early stage startups find themselves making - we abandoned the project. </p><p>There were quite a few flaws that we noticed within the concept, some of which we knew of and were willing to risk letting it slide in a sort of \"we'll figure this out later\" mentality, and others that were brought to our attention quite late in the game. </p><p><strong>The rate of traveling</strong> - The amount of traveling that the average person did over the course of a year was simply too low. While there are of course exceptions (hell our entire team fit the power-traveler description), we didn't want to build a niche product for a small demographic and were worried about bringing infrequent travelers back into the system after they complete their once-a-year vacation trip. </p><p><strong>The marketplace and logistics</strong> - At the start, we had the issue of keeping a good balance of package requests and travelers, which often led to expats waiting for weeks at a time to find a traveler able to accommodate them. As a result, we moved from advertising ourselves as an international solution, to a South East Asian specific service, and eventually dropped down to 2 countries in order to keep the marketplace well populated, and in turn, alienated many of our users. Narrowing our service early on though didn't help with the logistics of the operation, and coordinating travelers into more remote and off-the-beaten track locations to help the requesters proved unsuccessful. </p><p><strong>Security and international laws</strong> - So many red flags for the investors. A personal headache for us, and of course trust issues with the parties actually involved in the transaction. </p><p><strong>Incumbent market</strong> - We liked to imagine ourselves as a more reliable and cheaper alternative to FedEx, but really no. It was more wishful thinking than anything else. If we threw up a graph with both a reliability and cost axis we'd probably be somewhere pretty embarrassing. </p><p><strong>South East Asian modernization</strong> - We were looking for a long play, and with the most basic flaws in mind (rate of travelers returning to the service for example), we had to figure out -- would this service still be useful years from now as South East Asia increases their infrastructure to support local shipping? </p><p><strong>Traveler incentive</strong> - Most of our user interviews showed interest was primarily out of sheer good will on part of the traveler and not out of monetary gain. This is great for transporting smaller low-cost or easily accessible items, as the payment fee for travelers were quite low for these goods but we didn't want our service to revolve around those transactions -- we didn't want to build a Couchsurfing community. We needed a way to prioritize larger transactions, which of course came with greater risk, required a greater level of trust that we were, at the time, unable to instill on the participants, and finally, created a greater cost for the party making a delivery request. At this time, we had to ask ourselves, are we really 10x better than FedEx to warrant this?</p><p>We played around with various ideas to tackle many of the issues, from limiting our marketplace to brand new items and preventing users from requesting personal goods from home, to scavenger hunts and other fun promotional ideas. At one point we even considered a traveler verification system for frequent fliers to transport products for smaller local businesses. In the end however, we found ourselves reaching for a pivot and while the opportunity to launch the application in conjunction of exploring other ideas was still on the table, we eventually decided that we were not willing to put 10 or 20% of our time into Envoyrs just to see what comes of it while attempting to fumble along with another business, and so we made the all-or-nothing move and folded.</p><p>Now for the pivot...</p>",
+    "id": "38"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0038.jpg"
+    ],
+    "title": "The Ganges",
+    "timestamp": "2015-02-21 10:27:42",
+    "content": null,
+    "id": "37"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0036_1.jpg"
+    ],
+    "title": "Varanasi",
+    "timestamp": "2015-02-20 08:49:57",
+    "content": null,
+    "id": "36"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0035.jpg"
+    ],
+    "title": "Varanasi",
+    "timestamp": "2015-02-20 08:49:57",
+    "content": null,
+    "id": "34"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0034.jpg"
+    ],
+    "title": "Kathmandu",
+    "timestamp": "2015-02-19 17:58:13",
+    "content": null,
+    "id": "33"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0033.jpg"
+    ],
+    "title": "Argentina",
+    "timestamp": "2015-02-18 16:46:00",
+    "content": null,
+    "id": "32"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0032_1.jpg"
+    ],
+    "title": "Fireflies",
+    "timestamp": "2015-02-17 16:03:55",
+    "content": null,
+    "id": "31"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0031.jpg"
+    ],
+    "title": "The Himalayas",
+    "timestamp": "2015-02-07 17:26:14",
+    "content": null,
+    "id": "30"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0030_2.jpg"
+    ],
+    "title": "Bogota",
+    "timestamp": "2014-12-28 09:59:19",
+    "content": null,
+    "id": "29"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0030_1.jpg"
+    ],
+    "title": "Buenos Aires",
+    "timestamp": "2014-12-03 15:52:21",
+    "content": null,
+    "id": "28"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0029.jpg"
+    ],
+    "title": "Denmark",
+    "timestamp": "2014-11-25 21:42:51",
+    "content": null,
+    "id": "27"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0028.jpg"
+    ],
+    "title": "Denmark",
+    "timestamp": "2014-11-25 21:42:51",
+    "content": null,
+    "id": "26"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0027.jpg"
+    ],
+    "title": "The Man",
+    "timestamp": "2014-10-06 01:59:37",
+    "content": null,
+    "id": "25"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0008.jpg"
+    ],
+    "title": "Iceland",
+    "timestamp": "2013-11-02 00:00:00",
+    "content": null,
+    "id": "24"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0007.jpg"
+    ],
+    "title": "Iceland",
+    "timestamp": "2013-11-02 00:00:00",
+    "content": null,
+    "id": "23"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0006.jpg"
+    ],
+    "title": "Iceland",
+    "timestamp": "2013-11-02 00:00:00",
+    "content": null,
+    "id": "22"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0011.jpg"
+    ],
+    "title": "Airwaves",
+    "timestamp": "2013-11-01 00:00:00",
+    "content": null,
+    "id": "21"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0010.jpg"
+    ],
+    "title": "Airwaves",
+    "timestamp": "2013-11-01 00:00:00",
+    "content": null,
+    "id": "20"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0023.jpg"
+    ],
+    "title": "Untitled",
+    "timestamp": "2013-09-02 00:00:00",
+    "content": null,
+    "id": "19"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0025.jpg"
+    ],
+    "title": "Bryant Dope",
+    "timestamp": "2013-09-01 00:00:00",
+    "content": null,
+    "id": "18"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0014.jpg"
+    ],
+    "title": "Motel",
+    "timestamp": "2013-08-05 00:00:00",
+    "content": null,
+    "id": "17"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0017.jpg"
+    ],
+    "title": "Motel",
+    "timestamp": "2013-08-05 00:00:00",
+    "content": null,
+    "id": "16"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0020.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "15"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0019.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "14"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0018.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "13"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0016.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "12"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0015.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "11"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0012.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "10"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0013.jpg"
+    ],
+    "title": "On the Road",
+    "timestamp": "2013-08-01 00:00:00",
+    "content": null,
+    "id": "9"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0022.jpg"
+    ],
+    "title": "LES",
+    "timestamp": "2013-04-01 00:00:00",
+    "content": null,
+    "id": "8"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0024.jpg"
+    ],
+    "title": "LES",
+    "timestamp": "2013-04-01 00:00:00",
+    "content": null,
+    "id": "7"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0021.jpg"
+    ],
+    "title": "Bronx",
+    "timestamp": "2013-03-01 00:00:00",
+    "content": null,
+    "id": "6"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0003.jpg"
+    ],
+    "title": "Capvaa",
+    "timestamp": "2013-01-03 00:00:00",
+    "content": null,
+    "id": "5"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0005.jpg"
+    ],
+    "title": "Capvaa",
+    "timestamp": "2013-01-02 00:00:00",
+    "content": null,
+    "id": "4"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0004.jpg"
+    ],
+    "title": "Capvaa",
+    "timestamp": "2013-01-02 00:00:00",
+    "content": null,
+    "id": "3"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0002.jpg"
+    ],
+    "title": "Capvaa",
+    "timestamp": "2013-01-02 00:00:00",
+    "content": null,
+    "id": "2"
+  },
+  {
+    "images": [
+      "/assets/blog/media/0001.jpg"
+    ],
+    "title": "Capvaa",
+    "timestamp": "2013-01-02 00:00:00",
+    "content": null,
+    "id": "1"
+  }
+]
