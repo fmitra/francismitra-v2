@@ -1,9 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const AssetsPlugin = require('assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('mini-css-extract-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 const autoprefixer = require('autoprefixer');
 
 const dirs = {
@@ -71,12 +70,23 @@ module.exports = {
     }, {
       test: /\.scss$/,
       use: [
-        ExtractTextPlugin.loader,
-        'css-loader?minimize',
-        // TODO Update this to pass ocnfig
-        // and remove extra file
-        'postcss-loader',
-        'sass-loader'
+        MiniCSSExtractPlugin.loader,
+        {
+          loader: 'css-loader?minimize'
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            options: {
+              plugins: () => [require('autoprefixer')({
+                'browsers': ['> 1%', 'last 2 versions']
+              })]
+            }
+          }
+        },
+        {
+          loader: 'sass-loader'
+        }
       ]
     },
     {
@@ -93,51 +103,33 @@ module.exports = {
   },
 
   optimization: {
-    minimize: true
-    //    splitChunks: {
-    //      chunks: 'async',
-    //      minChunks: 1,
-    //      name: true,
-    //      cacheGroups: {
-    //        vendors: {
-    //          test: /[\\/]node_modules[\\/]/,
-    //          priority: -10
-    //        }
-    //      }
-    //    }
+    minimize: true,
+    splitChunks: {
+      chunks: 'async',
+      minChunks: 1,
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        }
+      }
+    }
   },
 
   plugins: [
-    //    new webpack.LoaderOptionsPlugin({
-    //      minimize: true,
-    //      debug: false,
-    //
-    //      options: {
-    //        postcss: [
-    //          autoprefixer({
-    //            browsers: [
-    //              '> 1%',
-    //              'ie >= 10'
-    //            ]
-    //          })
-    //        ]
-    //      }
-    //    }),
-
     new CleanWebpackPlugin(['dist']),
 
-    new ExtractTextPlugin({
+    new MiniCSSExtractPlugin({
       filename: '[name]-[contenthash].css',
       chunkFilename: '[id].css'
     }),
 
-    //    new webpack.DefinePlugin({
-    //      'process.env': {
-    //        NODE_ENV: JSON.stringify('production')
-    //      }
-    //    }),
-
-    //    new AssetsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
 
     new HtmlWebpackPlugin({
       template: 'index.ejs',
