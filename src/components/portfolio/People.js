@@ -22,7 +22,6 @@ import i21 from 'assets/images/portfolio/people/21.jpg';
 import i22 from 'assets/images/portfolio/people/22.jpg';
 import i23 from 'assets/images/portfolio/people/23.jpg';
 import i24 from 'assets/images/portfolio/people/24.jpg';
-import i25 from 'assets/images/portfolio/people/25.jpg';
 
 export default [
   {
@@ -144,10 +143,5 @@ export default [
     title: 'Untitled',
     year: '2011',
     image: i24
-  },
-  {
-    title: 'Graduates',
-    year: '2009',
-    image: i25
   }
 ];

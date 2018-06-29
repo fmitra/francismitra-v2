@@ -2,7 +2,6 @@ import i01 from 'assets/images/portfolio/lifestyle/01.jpg';
 import i02 from 'assets/images/portfolio/lifestyle/02.jpg';
 import i03 from 'assets/images/portfolio/lifestyle/03.jpg';
 import i04 from 'assets/images/portfolio/lifestyle/04.jpg';
-import i05 from 'assets/images/portfolio/lifestyle/05.jpg';
 import i06 from 'assets/images/portfolio/lifestyle/06.jpg';
 import i07 from 'assets/images/portfolio/lifestyle/07.jpg';
 import i08 from 'assets/images/portfolio/lifestyle/08.jpg';
@@ -22,7 +21,6 @@ import i21 from 'assets/images/portfolio/lifestyle/21.jpg';
 import i22 from 'assets/images/portfolio/lifestyle/22.jpg';
 import i23 from 'assets/images/portfolio/lifestyle/23.jpg';
 import i24 from 'assets/images/portfolio/lifestyle/24.jpg';
-import i25 from 'assets/images/portfolio/lifestyle/25.jpg';
 import i26 from 'assets/images/portfolio/lifestyle/26.jpg';
 import i27 from 'assets/images/portfolio/lifestyle/27.jpg';
 
@@ -46,11 +44,6 @@ export default [
     title: 'Untitled',
     year: '2011',
     image: i04
-  },
-  {
-    title: 'Untitled',
-    year: '2011',
-    image: i05
   },
   {
     title: 'Untitled',
@@ -146,11 +139,6 @@ export default [
     title: 'Untitled',
     year: '2011',
     image: i24
-  },
-  {
-    title: 'Graduates',
-    year: '2011',
-    image: i25
   },
   {
     title: 'Untitled',

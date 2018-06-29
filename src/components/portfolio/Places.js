@@ -55,6 +55,16 @@ export default [
     image: i05
   },
   {
+    title: 'India',
+    year: '2015',
+    image: i28
+  },
+  {
+    title: 'India',
+    year: '2015',
+    image: i29
+  },
+  {
     title: 'Cambodia',
     year: '2012',
     image: i06
@@ -163,15 +173,5 @@ export default [
     title: 'Myanmar',
     year: '2012',
     image: i27
-  },
-  {
-    title: 'India',
-    year: '2015',
-    image: i28
-  },
-  {
-    title: 'India',
-    year: '2015',
-    image: i29
   }
 ];

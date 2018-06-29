@@ -77,6 +77,12 @@ a.header__author {
   margin-top: 12px;
 }
 
+.header__menu-toggle--close {
+  @extend .header__menu-toggle;
+  height: 28px;
+  margin-top: 15px;
+}
+
 .header--white {
   background-color: rgba(128, 128, 128, .9);
   border-bottom: 0;

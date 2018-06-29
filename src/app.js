@@ -28,14 +28,18 @@ class App extends Component {
     this.handleToggleMobileMenu.bind(this);
   }
 
-  handleToggleMobileMenu(props) {
+  handleToggleMobileMenu(routerProps) {
     const isVisible = this.state.isMobileMenuVisible;
     const newState = {
       isMobileMenuVisible: !isVisible
     };
 
-    if (props) {
-      newState['path'] = props.url;
+    if (routerProps) {
+      newState['path'] = routerProps.url;
+
+      // user scroll position should be reset on
+      // route changes
+      window.scrollTo(0, 0);
     }
 
     this.setState(newState);

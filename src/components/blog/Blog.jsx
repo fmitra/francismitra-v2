@@ -3,6 +3,11 @@ import { h, render } from 'preact';
 import ScrollPagination from 'components/interfaces/ScrollPagination';
 import Posts from 'assets/blog/posts.json';
 
+const parseDate = (timestamp) => {
+  const date = new Date(timestamp);
+  return `${date.getFullYear()}.${date.getMonth()}.${date.getDate()}`;
+}
+
 const BlogImage = (props) => (
   // TODO For now we'll leave this out of webpack. Debug this later
   <img className="blog__image" src={props.image} alt="" />
@@ -16,10 +21,14 @@ const BlogPost = (props) => {
   return (
     <div className="blog__post">
       {images}
-      <div className="blog__content" dangerouslySetInnerHTML={{ __html: props.item.content }}>
-      </div>
+      {
+        props.item.content &&
+        <div className="blog__content"
+          dangerouslySetInnerHTML={{ __html: props.item.content }}>
+        </div>
+      }
       <div className="blog__meta">
-        <span className="meta__date">{props.item.timestamp}</span>
+        <span className="meta__date">{parseDate(props.item.timestamp)}</span>
         <span className="meta__spacer">|</span>
         <span className="meta__title">{props.item.title}</span>
       </div>
