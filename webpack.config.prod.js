@@ -55,6 +55,13 @@ module.exports = {
         failOnError: true
       }
     }, {
+      test: /\.(woff2?|ttf|otf|eot)$/,
+      loader: 'file-loader',
+      exclude: /node_modules/,
+      options: {
+        name: '[path][name].[ext]'
+      }
+    }, {
       test: /\.(?:js|jsx)$/,
       loader: 'babel-loader',
       exclude: /node_modules/,

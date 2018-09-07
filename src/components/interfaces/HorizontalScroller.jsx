@@ -7,11 +7,6 @@ import { h, Component } from 'preact';
  * behaves as predicted.
  */
 class HorizontalScroller extends Component {
-  constructor(props) {
-    super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
   handleScroll(e) {
     const horizontal = e.deltaX;
     const vertical = e.deltaY;

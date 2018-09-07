@@ -1,17 +1,5 @@
 /*
 =================================================
-CUSTOM FONTS
-================================================*/
-@font-face {
-  font-family: 'letter_gothic_medium';
-  src: url('/static/fonts/letter-gothic-medium.eot?') format('eot');
-  src: local('letter gothic std'),
-       url('/static/fonts/letter-gothic-medium.otf'),
-       url('/static/fonts/letter-gothic-medium.ttf') format('truetype');
-}
-
-/*
-=================================================
 DEFAULTS, MIXINS, VARIABLES
 ================================================*/
 $white: #fff;

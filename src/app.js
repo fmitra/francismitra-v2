@@ -14,6 +14,7 @@ import Portfolio from 'components/portfolio/Portfolio';
 import Info from 'components/info/Info';
 
 // Styles
+import 'styles/fonts.scss';
 import 'styles/app.scss';
 
 class App extends Component {

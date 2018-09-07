@@ -50,6 +50,13 @@ module.exports = {
         ]
       }
     }, {
+      test: /\.(woff2?|ttf|otf|eot)$/,
+      loader: 'file-loader',
+      exclude: /node_modules/,
+      options: {
+        name: '[path][name].[ext]'
+      }
+    }, {
       test: /\.scss$/,
       use: [
         {
